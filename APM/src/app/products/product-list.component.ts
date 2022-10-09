@@ -8,7 +8,8 @@ export class ProductsComponent {
   pageTitle = 'Product List !';
   imageWidth = 50;
   imageMargin = 2;
-  showImage:boolean=false;
+  showImage: boolean = false;
+  listFilter: string = 'cart';
 
   products: any[] = [
     {
@@ -63,7 +64,7 @@ export class ProductsComponent {
     },
   ];
 
-  toggleImage(){
-    this.showImage=!this.showImage;
+  toggleImage() {
+    this.showImage = !this.showImage;
   }
 }
