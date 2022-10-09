@@ -8,6 +8,8 @@ export class ProductsComponent {
   pageTitle = 'Product List !';
   imageWidth = 50;
   imageMargin = 2;
+  showImage:boolean=false;
+
   products: any[] = [
     {
       productId: 1,
@@ -60,4 +62,8 @@ export class ProductsComponent {
       imageUrl: 'assets/images/xbox-controller.png',
     },
   ];
+
+  toggleImage(){
+    this.showImage=!this.showImage;
+  }
 }
