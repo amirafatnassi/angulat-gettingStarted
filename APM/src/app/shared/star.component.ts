@@ -9,13 +9,13 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 })
 export class StarComponent implements OnChanges {
   @Input() rating: number = 0;
-  cropWidth: number = 110;
+  cropWidth: number = 75;
   faStar = faStar;
   @Output() ratingClicked: EventEmitter<string>=
   new EventEmitter<string>;
 
   ngOnChanges(): void {
-    this.cropWidth = this.rating * 110/5;
+    this.cropWidth = this.rating * 75/5;
   }
 
   onClick(){
