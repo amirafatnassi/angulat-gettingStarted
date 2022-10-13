@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,19 @@ import { WelcomeComponent } from './home/welcome.component';
     ProductDetailComponent,
     WelcomeComponent,
   ],
-  imports: [BrowserModule, FormsModule, FontAwesomeModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductsComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+    ]),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
